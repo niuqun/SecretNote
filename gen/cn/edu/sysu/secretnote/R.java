@@ -61,6 +61,9 @@ public final class R {
         public static final int enter_new_email=0x7f05000e;
         public static final int error=0x7f05000f;
         public static final int hello_world=0x7f050002;
+        public static final int hint_confirm_password=0x7f05001a;
+        public static final int hint_password=0x7f050019;
+        public static final int hint_user_name=0x7f050018;
         public static final int login_failed=0x7f050010;
         public static final int logon=0x7f050003;
         public static final int message=0x7f050014;

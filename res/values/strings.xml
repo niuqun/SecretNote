@@ -25,5 +25,8 @@
     <string name="register_succeeded">注册成功</string>
     <string name="register_failed">注册失败</string>
     <string name="email_not_valid">用户名不合法</string>
+    <string name="hint_user_name">someone@example.com</string>
+    <string name="hint_password">请输入密码</string>
+    <string name="hint_confirm_password">请再次输入密码</string>
 
 </resources>
