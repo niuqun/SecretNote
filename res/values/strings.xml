@@ -21,5 +21,9 @@
     <string name="title_activity_view_notes">ViewNotesActivity</string>
     <string name="title_activity_register">RegisterActivity</string>
     <string name="empty_username_password">用户名或密码为空</string>
+    <string name="message">消息</string>
+    <string name="register_succeeded">注册成功</string>
+    <string name="register_failed">注册失败</string>
+    <string name="email_not_valid">用户名不合法</string>
 
 </resources>

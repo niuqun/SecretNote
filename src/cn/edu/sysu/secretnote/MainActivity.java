@@ -46,18 +46,31 @@ public class MainActivity extends Activity {
 							MainActivity.this);
 
 					alert.setTitle(R.string.error);
-					alert.setTitle(R.string.empty_username_password);
+					alert.setMessage(R.string.empty_username_password)
+							.setCancelable(false).setPositiveButton("OK", null);
 					alert.create();
 					alert.show();
 				} else {
-					BasicNameValuePair b1 = new BasicNameValuePair("cmd",
-							"LOGIN");
-					BasicNameValuePair b2 = new BasicNameValuePair("userName",
-							userName.getText().toString());
-					BasicNameValuePair b3 = new BasicNameValuePair(
-							"userPassword", password.getText().toString());
+					if (isEmailValid(userName.getText().toString())) {
+						BasicNameValuePair b1 = new BasicNameValuePair("cmd",
+								"LOGIN");
+						BasicNameValuePair b2 = new BasicNameValuePair(
+								"userName", userName.getText().toString());
+						BasicNameValuePair b3 = new BasicNameValuePair(
+								"userPassword", password.getText().toString());
 
-					new AuthenUserAnsycTask().execute(b1, b2, b3);
+						new AuthenUserAnsycTask().execute(b1, b2, b3);
+					} else {
+						AlertDialog.Builder alert = new AlertDialog.Builder(
+								MainActivity.this);
+
+						alert.setTitle(R.string.error);
+						alert.setMessage(R.string.email_not_valid)
+								.setCancelable(false)
+								.setPositiveButton("OK", null);
+						alert.create();
+						alert.show();
+					}
 				}
 			}
 		});
@@ -129,5 +142,9 @@ public class MainActivity extends Activity {
 				alert.show();
 			}
 		}
+	}
+
+	public boolean isEmailValid(String email) {
+		return android.util.Patterns.EMAIL_ADDRESS.matcher(email).matches();
 	}
 }

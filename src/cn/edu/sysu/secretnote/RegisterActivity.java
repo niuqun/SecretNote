@@ -37,7 +37,6 @@ public class RegisterActivity extends Activity {
 
 			@Override
 			public void onClick(View v) {
-				// TODO send user name and password to server
 				String name = userName.getText().toString();
 
 				if (!isValidEmail(name)) {
@@ -72,6 +71,8 @@ public class RegisterActivity extends Activity {
 								"userName", userName.getText().toString());
 						BasicNameValuePair b3 = new BasicNameValuePair(
 								"userPassword", password.getText().toString());
+
+						new RegisterAsyncTask().execute(b1, b2, b3);
 					}
 				}
 			}
@@ -101,29 +102,42 @@ public class RegisterActivity extends Activity {
 		}
 		return false;
 	}
-	
+
 	class RegisterAsyncTask extends AsyncTask<NameValuePair, Void, Void> {
 
 		private ArrayList<NameValuePair> parameters = new ArrayList<NameValuePair>();
 		private ArrayList<NameValuePair> results = new ArrayList<NameValuePair>();
-		
+
 		@Override
 		protected Void doInBackground(NameValuePair... arg0) {
 			HttpPostProtocol httpPost = new HttpPostProtocol();
-			
+
 			parameters.clear();
 			for (int i = 0; i < arg0.length; ++i) {
 				parameters.add(arg0[i]);
 			}
-			
+
 			httpPost.sendHttpPostToServer(parameters, results);
 			return null;
 		}
-		
+
 		@Override
 		protected void onPostExecute(Void result) {
 			if (results.size() > 0) {
-				
+				AlertDialog.Builder alert = new AlertDialog.Builder(
+						RegisterActivity.this);
+
+				if (results.get(0).getValue().equals("0x0")) {
+					alert.setTitle(R.string.message);
+					alert.setMessage(R.string.register_succeeded)
+							.setCancelable(false).setPositiveButton("OK", null);
+				} else {
+					alert.setTitle(R.string.message);
+					alert.setMessage(R.string.register_failed)
+							.setCancelable(false).setPositiveButton("OK", null);
+				}
+				alert.create();
+				alert.show();
 			}
 		}
 	}
