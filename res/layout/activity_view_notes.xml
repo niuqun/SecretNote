@@ -8,4 +8,44 @@
     android:paddingTop="@dimen/activity_vertical_margin"
     tools:context=".ViewNotesActivity" >
 
+    <TextView
+        android:id="@+id/textViewNote"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentTop="true"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="20dp"
+        android:text="@string/message"
+        android:textAppearance="?android:attr/textAppearanceLarge" />
+
+    <EditText
+        android:id="@+id/editTextWriteNote"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentLeft="true"
+        android:layout_below="@+id/textViewNote"
+        android:layout_marginTop="51dp"
+        android:ems="10"
+        android:inputType="textMultiLine" >
+
+        <requestFocus />
+    </EditText>
+
+    <Button
+        android:id="@+id/buttonPublish"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentRight="true"
+        android:layout_alignTop="@+id/editTextWriteNote"
+        android:text="@string/publish" />
+
+    <ListView
+        android:id="@+id/listViewNotes"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignLeft="@+id/editTextWriteNote"
+        android:layout_below="@+id/editTextWriteNote"
+        android:layout_marginTop="21dp" >
+    </ListView>
+
 </RelativeLayout>

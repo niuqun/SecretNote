@@ -87,4 +87,14 @@
         android:layout_marginRight="28dp"
         android:text="@string/reset" />
 
+    <TextView
+        android:id="@+id/textViewRegister"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentTop="true"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="20dp"
+        android:text="@string/register"
+        android:textAppearance="?android:attr/textAppearanceLarge" />
+
 </RelativeLayout>
