@@ -1,0 +1,87 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:paddingBottom="@dimen/activity_vertical_margin"
+    android:paddingLeft="@dimen/activity_horizontal_margin"
+    android:paddingRight="@dimen/activity_horizontal_margin"
+    android:paddingTop="@dimen/activity_vertical_margin"
+    tools:context=".RegisterActivity" >
+
+    <TextView
+        android:id="@+id/textViewNewUserName"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentTop="true"
+        android:layout_marginTop="72dp"
+        android:text="@string/user_name" />
+
+    <TextView
+        android:id="@+id/textView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentLeft="true"
+        android:layout_below="@+id/editTextNewUserName"
+        android:layout_marginTop="51dp"
+        android:text="@string/password" />
+
+    <EditText
+        android:id="@+id/editTextNewPassword"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignBaseline="@+id/textView"
+        android:layout_alignBottom="@+id/textView"
+        android:layout_alignLeft="@+id/editTextNewUserName"
+        android:layout_alignRight="@+id/editTextNewUserName"
+        android:ems="10"
+        android:inputType="textPassword" />
+
+    <TextView
+        android:id="@+id/textViewConfirmPassword"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentLeft="true"
+        android:layout_centerVertical="true"
+        android:text="@string/confirm_password" />
+
+    <EditText
+        android:id="@+id/editTextConfirmPassword"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignLeft="@+id/editTextNewPassword"
+        android:layout_alignRight="@+id/editTextNewPassword"
+        android:layout_centerVertical="true"
+        android:ems="10"
+        android:inputType="textPassword" />
+
+    <EditText
+        android:id="@+id/editTextNewUserName"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignBaseline="@+id/textViewNewUserName"
+        android:layout_alignBottom="@+id/textViewNewUserName"
+        android:layout_alignParentRight="true"
+        android:ems="10"
+        android:inputType="textEmailAddress" />
+
+    <Button
+        android:id="@+id/buttonRegisterNew"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/editTextConfirmPassword"
+        android:layout_marginTop="58dp"
+        android:layout_toRightOf="@+id/textView"
+        android:text="@string/register" />
+
+    <Button
+        android:id="@+id/buttonReset"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignBaseline="@+id/buttonRegisterNew"
+        android:layout_alignBottom="@+id/buttonRegisterNew"
+        android:layout_alignRight="@+id/editTextConfirmPassword"
+        android:layout_marginRight="28dp"
+        android:text="@string/reset" />
+
+</RelativeLayout>
