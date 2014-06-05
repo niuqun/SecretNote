@@ -24,18 +24,23 @@ public final class R {
         public static final int ic_launcher=0x7f020000;
     }
     public static final class id {
-        public static final int action_settings=0x7f080014;
+        public static final int action_settings=0x7f08001b;
+        public static final int buttonCancelPublish=0x7f080016;
         public static final int buttonLogon=0x7f080005;
-        public static final int buttonPublish=0x7f080012;
+        public static final int buttonPublish=0x7f080011;
+        public static final int buttonPublishNote=0x7f080017;
+        public static final int buttonRefresh=0x7f080012;
         public static final int buttonRegister=0x7f080006;
         public static final int buttonRegisterNew=0x7f08000d;
         public static final int buttonReset=0x7f08000e;
+        public static final int desc=0x7f08001a;
         public static final int editTextConfirmPassword=0x7f08000c;
         public static final int editTextNewPassword=0x7f08000a;
         public static final int editTextNewUserName=0x7f080009;
         public static final int editTextPassword=0x7f080004;
         public static final int editTextUserName=0x7f080002;
-        public static final int editTextWriteNote=0x7f080011;
+        public static final int editTextWriteNote=0x7f080015;
+        public static final int icon=0x7f080018;
         public static final int listViewNotes=0x7f080013;
         public static final int textView=0x7f080008;
         public static final int textViewConfirmPassword=0x7f08000b;
@@ -45,20 +50,26 @@ public final class R {
         public static final int textViewPassword=0x7f080003;
         public static final int textViewRegister=0x7f08000f;
         public static final int textViewUserName=0x7f080001;
+        public static final int textViewWriteNote=0x7f080014;
+        public static final int title=0x7f080019;
     }
     public static final class layout {
         public static final int activity_main=0x7f030000;
         public static final int activity_register=0x7f030001;
         public static final int activity_view_notes=0x7f030002;
+        public static final int activity_write=0x7f030003;
+        public static final int list_item=0x7f030004;
     }
     public static final class menu {
         public static final int main=0x7f070000;
         public static final int register=0x7f070001;
         public static final int view_notes=0x7f070002;
+        public static final int write=0x7f070003;
     }
     public static final class string {
         public static final int action_settings=0x7f050001;
         public static final int app_name=0x7f050000;
+        public static final int cancel=0x7f05001f;
         public static final int confirm_password=0x7f050008;
         public static final int duplicate_user_name=0x7f050009;
         public static final int email_not_valid=0x7f050017;
@@ -69,19 +80,23 @@ public final class R {
         public static final int hint_confirm_password=0x7f05001a;
         public static final int hint_password=0x7f050019;
         public static final int hint_user_name=0x7f050018;
+        public static final int image=0x7f05001c;
         public static final int login_failed=0x7f050010;
         public static final int logon=0x7f050003;
         public static final int message=0x7f050014;
         public static final int password=0x7f050005;
         public static final int publish=0x7f050007;
+        public static final int refresh=0x7f05001b;
         public static final int register=0x7f050006;
         public static final int register_failed=0x7f050016;
         public static final int register_succeeded=0x7f050015;
         public static final int reset=0x7f05000c;
         public static final int title_activity_register=0x7f050012;
         public static final int title_activity_view_notes=0x7f050011;
+        public static final int title_activity_write=0x7f05001d;
         public static final int unmatched_password=0x7f05000b;
         public static final int user_name=0x7f050004;
+        public static final int write_note=0x7f05001e;
         public static final int wrong_email_addr=0x7f05000d;
         public static final int wrong_password=0x7f05000a;
     }
