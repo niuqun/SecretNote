@@ -29,9 +29,9 @@ public class HttpPostProtocol {
 				"http://10.0.2.2:8080/Calculator/servlet/CalculateServlet"));
 		URL.add(new BasicNameValuePair("LOGIN",
 				"http://10.0.2.2:8080/Calculator/servlet/CalculateServlet"));
-		URL.add(new BasicNameValuePair("LOGOUT", "http://localhost:8008"));
-		URL.add(new BasicNameValuePair("RECEIVE", "http://localhost:8008"));
-		URL.add(new BasicNameValuePair("POST", "http://localhost:8080"));
+		URL.add(new BasicNameValuePair("LOGOUT", "http://10.0.2.2:8080/Calculator/servlet/CalculateServlet"));
+		URL.add(new BasicNameValuePair("RECEIVE", "http://10.0.2.2:8080/Calculator/servlet/CalculateServlet"));
+		URL.add(new BasicNameValuePair("POST", "http://10.0.2.2:8080/Calculator/servlet/CalculateServlet"));
 	}
 
 	public boolean sendHttpPostToServer(List<NameValuePair> paramsIn,
