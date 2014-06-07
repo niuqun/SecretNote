@@ -125,11 +125,9 @@ public class MainActivity extends Activity {
 
 			if (succeeded) {
 				Intent intent = new Intent();
-				Bundle bundle = new Bundle();
 
 				intent.setClass(MainActivity.this, ViewNotesActivity.class);
-				bundle.putString("userName", userName.getText().toString());
-				intent.putExtras(bundle);
+				intent.putExtra("userName", userName.getText().toString());
 				startActivity(intent);
 			} else {
 				AlertDialog.Builder alert = new AlertDialog.Builder(
