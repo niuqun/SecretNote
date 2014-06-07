@@ -37,6 +37,7 @@ public class ViewNotesActivity extends Activity {
 	static final int publishRequestCode = 0x0010;
 	private LocationManager locationManager = null;
 	private LocationListener locationListener = null;
+	private String userName;
 
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
@@ -53,6 +54,9 @@ public class ViewNotesActivity extends Activity {
 				new String[] { "消息", "发布人" }, new int[] { android.R.id.text1,
 						android.R.id.text2 });
 		allNotes.setAdapter(adapter);
+
+		Intent userNameIntent = getIntent();
+		userName = userNameIntent.getStringExtra("userName");
 
 		publishNote.setOnClickListener(new View.OnClickListener() {
 
@@ -89,8 +93,10 @@ public class ViewNotesActivity extends Activity {
 			@Override
 			public void onClick(View v) {
 				BasicNameValuePair b1 = new BasicNameValuePair("cmd", "LOGOUT");
+				BasicNameValuePair b2 = new BasicNameValuePair("userName",
+						userName);
 
-				new LogoutAsyncTask().execute(b1);
+				new LogoutAsyncTask().execute(b1, b2);
 			}
 		});
 	}
@@ -118,8 +124,10 @@ public class ViewNotesActivity extends Activity {
 						data.getStringExtra("note"));
 				BasicNameValuePair b5 = new BasicNameValuePair("parentMessage",
 						"");
+				BasicNameValuePair b6 = new BasicNameValuePair("userName",
+						userName);
 
-				new NoteAsyncTask().execute(b1, b2, b3, b4, b5);
+				new NoteAsyncTask().execute(b1, b2, b3, b4, b5, b6);
 			} else if (resultCode == 0x2000) {
 
 			}
