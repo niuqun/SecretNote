@@ -67,10 +67,16 @@ public class HttpPostProtocol {
 					BufferedReader reader = new BufferedReader(
 							new InputStreamReader(in));
 
-					while ((s = reader.readLine()) != null) {
+/*					while ((s = reader.readLine()) != null) {
 						msg += s;
+					}*/
+					paramsOut.add(new BasicNameValuePair("result", reader.readLine()));
+					if ((s = reader.readLine()) != null) {
+						paramsOut.add(new BasicNameValuePair("writer", s));
 					}
-					paramsOut.add(new BasicNameValuePair("result", msg));
+					if ((s = reader.readLine()) != null) {
+						paramsOut.add(new BasicNameValuePair("note", s));
+					}					
 
 					return true;
 				}

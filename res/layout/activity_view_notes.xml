@@ -18,26 +18,6 @@
         android:text="@string/message"
         android:textAppearance="?android:attr/textAppearanceLarge" />
 
-    <Button
-        android:id="@+id/buttonPublish"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_below="@+id/textViewNote"
-        android:layout_marginLeft="29dp"
-        android:layout_marginTop="19dp"
-        android:layout_toRightOf="@+id/textViewNote"
-        android:text="@string/publish" />
-
-    <Button
-        android:id="@+id/buttonRefresh"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_alignBaseline="@+id/buttonPublish"
-        android:layout_alignBottom="@+id/buttonPublish"
-        android:layout_marginRight="26dp"
-        android:layout_toLeftOf="@+id/textViewNote"
-        android:text="@string/refresh" />
-
     <ListView
         android:id="@+id/listViewNotes"
         android:layout_width="match_parent"
@@ -47,5 +27,32 @@
         android:layout_marginTop="44dp" >
 
     </ListView>
+
+    <Button
+        android:id="@+id/buttonRefresh"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignBaseline="@+id/buttonPublish"
+        android:layout_alignBottom="@+id/buttonPublish"
+        android:layout_alignLeft="@+id/listViewNotes"
+        android:text="@string/refresh" />
+
+    <Button
+        android:id="@+id/buttonPublish"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignLeft="@+id/textViewNote"
+        android:layout_below="@+id/textViewNote"
+        android:layout_marginTop="22dp"
+        android:text="@string/publish" />
+
+    <Button
+        android:id="@+id/buttonLogout"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignBaseline="@+id/buttonPublish"
+        android:layout_alignBottom="@+id/buttonPublish"
+        android:layout_alignRight="@+id/listViewNotes"
+        android:text="@string/logout" />
 
 </RelativeLayout>

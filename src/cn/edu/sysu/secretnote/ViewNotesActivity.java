@@ -26,6 +26,7 @@ public class ViewNotesActivity extends Activity {
 
 	private Button refreshNotes;
 	private Button publishNote;
+	private Button logout;
 	private boolean bRefresh = false;
 	private boolean bPublish = false;
 	private ListView allNotes;
@@ -44,6 +45,7 @@ public class ViewNotesActivity extends Activity {
 
 		refreshNotes = (Button) findViewById(R.id.buttonRefresh);
 		publishNote = (Button) findViewById(R.id.buttonPublish);
+		logout = (Button) findViewById(R.id.buttonLogout);
 		allNotes = (ListView) findViewById(R.id.listViewNotes);
 		listItems = new ArrayList<Map<String, String>>();
 		adapter = new SimpleAdapter(this, listItems,
@@ -79,6 +81,16 @@ public class ViewNotesActivity extends Activity {
 						String.valueOf(latitude));
 
 				new NoteAsyncTask().execute(b1, b2, b3);
+			}
+		});
+
+		logout.setOnClickListener(new View.OnClickListener() {
+
+			@Override
+			public void onClick(View v) {
+				BasicNameValuePair b1 = new BasicNameValuePair("cmd", "LOGOUT");
+
+				new LogoutAsyncTask().execute(b1);
 			}
 		});
 	}
@@ -196,8 +208,10 @@ public class ViewNotesActivity extends Activity {
 				if (bRefresh) {
 					Map<String, String> data = new HashMap<String, String>();
 
-					data.put("消息", "李清照");
-					data.put("发布人", "春到长门春草青，江梅些子绿，未均匀");
+					// data.put("消息", "李清照");
+					// data.put("发布人", "春到长门春草青，江梅些子绿，未均匀");
+					data.put("消息", results.get(2).getValue());
+					data.put("发布人", results.get(1).getValue());
 					listItems.add(data);
 					adapter.notifyDataSetChanged();
 					bRefresh = false;
@@ -208,5 +222,36 @@ public class ViewNotesActivity extends Activity {
 				toast.show();
 			}
 		}
+	}
+
+	private class LogoutAsyncTask extends AsyncTask<NameValuePair, Void, Void> {
+		private ArrayList<NameValuePair> parameters = new ArrayList<NameValuePair>();
+		private ArrayList<NameValuePair> results = new ArrayList<NameValuePair>();
+
+		@Override
+		protected Void doInBackground(NameValuePair... arg0) {
+			HttpPostProtocol post = new HttpPostProtocol();
+
+			parameters.clear();
+			results.clear();
+			for (int i = 0; i < arg0.length; ++i) {
+				parameters.add(arg0[i]);
+			}
+
+			post.sendHttpPostToServer(parameters, results);
+			return null;
+		}
+
+		@Override
+		protected void onPostExecute(Void result) {
+			if (results.get(0).getValue().equals("0x0")) {
+				Intent intent = new Intent(Intent.ACTION_MAIN);
+
+				intent.addCategory(Intent.CATEGORY_HOME);
+				intent.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
+				startActivity(intent);
+			}
+		}
+
 	}
 }
